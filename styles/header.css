@@ -1,0 +1,94 @@
+header {
+  margin: auto;
+  max-width: 1700px;
+  position: relative;
+}
+
+header::before {
+  content: "";
+  width: 360px;
+  height: 430px;
+  background-image: url("../images/backgrounds/Illustration-top2.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 60px;
+}
+
+.header {
+  max-width: 1440px;
+  margin: auto;
+}
+
+.header ul {
+  padding: 40px 0;
+  display: flex;
+  gap: 100px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.header ul li a {
+  display: inline-block;
+  font: 500 1.08rem/1.5 "Poppins", sans-serif;
+  padding: 10px 0;
+  color: var(--color-text1);
+  position: relative;
+}
+
+.header ul li a::before {
+  content: "";
+  display: block;
+  width: 0%;
+  height: 2px;
+  background-color: var(--color-text2);
+  position: absolute;
+  transition: 0.3s;
+  bottom: 0px;
+}
+
+.header ul li a:not(.denied):hover::before {
+  width: 100%;
+}
+
+@media (max-width: 800px) {
+  header::before {
+    top: 0;
+    left: -80px;
+  }
+
+  .header ul {
+    gap: 20px 20px;
+  }
+
+  .header ul .order1 {
+    text-align: center;
+    order: -1;
+    flex-basis: 100%;
+  }
+
+  .header ul li a:not(.denied) {
+    padding-left: 16px;
+    padding-right: 16px;
+    background-color: var(--color-2);
+    border-radius: 5%;
+  }
+
+  .header ul li a:not(.denied):hover {
+    background: linear-gradient(
+      200deg,
+      rgba(47, 47, 138, 1) 50%,
+      rgba(201, 97, 222, 0.5) 100%
+    );
+  }
+  .header ul li a::before {
+    display: none;
+  }
+}
+
+@media (max-width: 700px) {
+  .header ul li a {
+    font-size: 0.8rem;
+  }
+}
