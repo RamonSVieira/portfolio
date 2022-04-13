@@ -13,14 +13,19 @@ header::before {
   background-repeat: no-repeat;
   position: absolute;
   top: 60px;
+  z-index: -2;
 }
 
-.header {
+.header.mobile {
+  display: none;
+}
+
+.header.desktop {
   max-width: 1440px;
   margin: auto;
 }
 
-.header ul {
+.header.desktop ul {
   padding: 40px 0;
   display: flex;
   gap: 100px;
@@ -29,7 +34,7 @@ header::before {
   flex-wrap: wrap;
 }
 
-.header ul li a {
+.header.desktop ul li a {
   display: inline-block;
   font: 500 1.08rem/1.5 "Poppins", sans-serif;
   padding: 10px 0;
@@ -37,7 +42,7 @@ header::before {
   position: relative;
 }
 
-.header ul li a::before {
+.header.desktop ul li a::before {
   content: "";
   display: block;
   width: 0%;
@@ -48,7 +53,7 @@ header::before {
   bottom: 0px;
 }
 
-.header ul li a:not(.denied):hover::before {
+.header.desktop ul li a:not(.denied):hover::before {
   width: 100%;
 }
 
@@ -58,37 +63,71 @@ header::before {
     left: -80px;
   }
 
-  .header ul {
+  .header.desktop ul {
     gap: 20px 20px;
   }
 
-  .header ul .order1 {
+  .header.desktop ul .order1 {
     text-align: center;
     order: -1;
     flex-basis: 100%;
   }
 
-  .header ul li a:not(.denied) {
+  .header.desktop ul li a:not(.denied) {
     padding-left: 16px;
     padding-right: 16px;
     background-color: var(--color-2);
     border-radius: 5%;
   }
 
-  .header ul li a:not(.denied):hover {
+  .header.desktop ul li a:not(.denied):hover {
     background: linear-gradient(
       200deg,
       rgba(47, 47, 138, 1) 50%,
       rgba(201, 97, 222, 0.5) 100%
     );
   }
-  .header ul li a::before {
+  .header.desktop ul li a::before {
     display: none;
   }
 }
 
 @media (max-width: 700px) {
-  .header ul li a {
+  .header.desktop ul li a {
     font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 500px) {
+  header::before {
+    width: 150px;
+    left: -14px;
+    top: 60px;
+  }
+
+  .header.desktop {
+    display: none;
+  }
+
+  .header.mobile {
+    display: block;
+  }
+
+  .header.mobile ul {
+    width: 100%;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 34px;
+    background-color: var(--color-bg-header-mobile);
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+}
+
+@media (max-width: 370px) {
+  .header.mobile ul {
+    gap: 20px;
   }
 }

@@ -1,5 +1,6 @@
 :root {
   --color-bg: #0f103f;
+  --color-bg-header-mobile: rgba(201, 97, 222, 0.6);
   --color-bg-2: rgba(255, 255, 255, 0.3);
 
   --color-1: #1c1c65;
