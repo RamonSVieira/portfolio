@@ -2,21 +2,46 @@ body {
   margin: 0px;
   padding: 0px;
   background-color: var(--color-bg);
-  height: 1900px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+ul {
+  margin: 0px;
+  padding: 0px;
 }
 
 ul {
   list-style: none;
-  margin: 0px;
-  padding: 0px;
 }
 
 a {
   text-decoration: none;
 }
 
+img {
+  display: block;
+  width: 100%;
+}
+
 .container {
-  margin: 200px auto;
+  margin: 300px auto;
   max-width: 1200px;
-  padding: 40px;
+  padding: 0 40px;
+}
+
+@media (max-width: 800px) {
+  .container {
+    margin: 50px auto;
+  }
+}
+
+@media (max-width: 500px) {
+  .container {
+    margin: 100px auto;
+    padding: 16px;
+  }
 }
