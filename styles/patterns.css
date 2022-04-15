@@ -28,20 +28,23 @@ img {
 }
 
 .container {
-  margin: 300px auto;
+  margin: 200px auto;
   max-width: 1200px;
   padding: 0 40px;
+  display: flex;
+  align-items: center;
 }
 
 @media (max-width: 800px) {
   .container {
-    margin: 50px auto;
+    margin: 150px auto;
+    height: max-content;
   }
 }
 
 @media (max-width: 500px) {
   .container {
-    margin: 100px auto;
+    margin: 200px auto;
     padding: 16px;
   }
 }
